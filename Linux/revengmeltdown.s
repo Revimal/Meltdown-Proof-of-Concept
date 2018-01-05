@@ -2,7 +2,7 @@
 .intel_syntax noprefix
 .text
 
-.globl revengmeldown 
+.globl revengmeltdown
 .type revengmeltdown, @function
 revengmeltdown:
   mfence
@@ -21,7 +21,7 @@ herring:
   # Using result of dependent instructions, adjust rsp to trick prediction of ret
   movd eax, xmm0
   lea rsp, [rsp+rax+8]
-  ret # Actually returns from revengmeltdown, but predicted as returning from herring 
+  ret # Actually returns from revengmeltdown, but predicted as returning from herring
 
 .globl timed_read
 .type timed_read, @function
